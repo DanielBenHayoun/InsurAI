@@ -1,0 +1,56 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Testing
+.pytest_cache
+.coverage
+htmlcov/
+tests/
+pytest.ini
+run_tests.sh
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.cursor/
+
+# Build
+*.egg-info/
+dist/
+build/
+
+# Local data (will use Fly volume instead)
+*.db
+*.sqlite
+data/
+uploads/
+
+# Frontend (deploy separately to Vercel)
+frontend/
+
+# Documentation
+*.md
+!README.md
+
+# Scripts not needed in production
+scripts/
+
+# Alembic (migrations run separately if needed)
+alembic/
+alembic.ini
+

@@ -1,0 +1,29 @@
+# Fly.io configuration for InsurAI
+# See https://fly.io/docs/reference/configuration/ for reference
+
+app = "insurai"
+primary_region = "iad"  # US East (Virginia) - change if needed
+
+[build]
+  # Uses Dockerfile in the project root
+
+[env]
+  PORT = "8080"
+  LLM_PROVIDER = "google"
+  USE_MOCK_OCR = "True"
+  DEBUG = "False"
+  VECTOR_STORE_TYPE = "memory"
+  # DATABASE_URL uses the mounted volume - set in config.py
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+
+# Persistent storage for SQLite database
+[[mounts]]
+  source = "insurai_data"
+  destination = "/data"
+
