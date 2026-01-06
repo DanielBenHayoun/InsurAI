@@ -35,7 +35,7 @@ class Settings(BaseSettings):
     # ==========================================================================
     # Database
     # ==========================================================================
-    DATABASE_URL: str = "sqlite:////data/insur.db"  # SQLite on persistent volume (Fly.io)
+    DATABASE_URL: str = "sqlite:///./insur.db"  # SQLite in current directory (ephemeral on Render)
     # For PostgreSQL: "postgresql://user:password@localhost:5432/insur"
     # For async PostgreSQL: "postgresql+asyncpg://user:password@localhost:5432/insur"
     
